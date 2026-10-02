@@ -24,7 +24,7 @@ header {
 .logo {
     position: relative;
     display: inline-block;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
     letter-spacing: 1px;
     color: #ffffff;
@@ -185,4 +185,13 @@ h1 span {
 .feature-card p {
     color: #94a3b8;
     line-height: 1.5;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer .logo {
+    font-size: 20px;
 }
