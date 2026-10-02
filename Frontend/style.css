@@ -91,7 +91,6 @@ nav a:hover,
 }
 
 .login-btn,
-.create-account-btn,
 .start-btn {
     border: 0;
     border-radius: 999px;
@@ -104,15 +103,13 @@ nav a:hover,
         background 0.25s ease;
 }
 
-.login-btn,
-.create-account-btn {
+.login-btn {
     padding: 11px 21px;
     background: rgba(99, 102, 241, 0.18);
     border: 1px solid rgba(129, 140, 248, 0.45);
 }
 
 .login-btn:hover,
-.create-account-btn:hover,
 .start-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 30px rgba(99, 102, 241, 0.3);
@@ -339,11 +336,6 @@ nav a:hover,
 
     .login-btn {
         padding: 9px 16px;
-        font-size: 12px;
-    }
-
-    .create-account-btn {
-        padding: 10px 16px;
         font-size: 12px;
     }
 
