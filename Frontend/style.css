@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
     --background: #070b18;
-    --surface: rgba(18, 26, 48, 0.72);
-    --surface-solid: #111a31;
     --border: rgba(148, 163, 184, 0.18);
     --text: #f8fafc;
     --muted: #94a3b8;
@@ -51,13 +49,21 @@ header {
 }
 
 .logo {
+    display: inline-flex;
+    align-items: center;
     color: var(--text);
-    font-size: 35px;
-    font-weight: 800;
-    letter-spacing: -1px;
+    font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1;
 }
 
-.logo span {
+header .logo {
+    font-size: 32px;
+}
+
+.logo>span>span {
     color: var(--secondary);
 }
 
@@ -99,8 +105,7 @@ nav a:hover,
     cursor: pointer;
     transition:
         transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
+        box-shadow 0.25s ease;
 }
 
 .login-btn {
@@ -143,19 +148,10 @@ nav a:hover,
     max-width: 850px;
 }
 
-.eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #38bdf8;
-}
-
 .small-title {
     display: inline-block;
     margin-bottom: 24px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', Arial, sans-serif;
     background: linear-gradient(90deg, var(--secondary), #a5b4fc);
     background-clip: text;
     -webkit-background-clip: text;
@@ -178,12 +174,10 @@ nav a:hover,
 
 .hero-content h2 span {
     display: block;
-    background: linear-gradient(
-        90deg,
-        var(--secondary),
-        var(--primary),
-        var(--accent)
-    );
+    background: linear-gradient(90deg,
+            var(--secondary),
+            var(--primary),
+            var(--accent));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -231,11 +225,9 @@ nav a:hover,
     min-height: 220px;
     padding: 30px;
 
-    background: linear-gradient(
-        145deg,
-        rgba(30, 41, 59, 0.78),
-        rgba(15, 23, 42, 0.78)
-    );
+    background: linear-gradient(145deg,
+            rgba(30, 41, 59, 0.78),
+            rgba(15, 23, 42, 0.78));
     border: 1px solid var(--border);
     border-radius: 20px;
 
@@ -314,10 +306,6 @@ nav a:hover,
         padding: 90px 20px;
     }
 
-    .hero-content h2 {
-        letter-spacing: -2px;
-    }
-
     .feature-container {
         grid-template-columns: 1fr;
         max-width: 450px;
@@ -332,6 +320,10 @@ nav a:hover,
 @media (max-width: 480px) {
     .logo {
         font-size: 21px;
+    }
+
+    header .logo {
+        font-size: 24px;
     }
 
     .login-btn {
