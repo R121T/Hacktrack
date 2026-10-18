@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathons | HackTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+    <aside class="sidebar">
+        <a href="index.html" class="logo">
+            <span>Hack<span>Track</span></span>
+        </a>
+
+        <p class="sidebar-label">WORKSPACE</p>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="hackathons.html" class="active">Hackathons</a>
+            <a href="participants.html">Participants</a>
+            <a href="teams.html">Teams</a>
+            <a href="submissions.html">Submissions</a>
+            <a href="announcements.html">Announcements</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html">Back to Website</a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div>
+                <p class="dashboard-eyebrow">ORGANIZER WORKSPACE</p>
+                <h1>Hackathons</h1>
+                <p class="dashboard-subtitle">Create and manage your upcoming and ongoing events.</p>
+            </div>
+            <a href="#add-hackathon" class="dashboard-action">+ Add Hackathon</a>
+        </header>
+
+        <section class="participant-toolbar">
+            <label class="search-field">
+                <span class="sr-only">Search hackathons</span>
+                <input id="hackathon-search" type="search" placeholder="Search hackathons">
+            </label>
+        </section>
+
+        <section class="participant-layout">
+            <div class="participant-card participant-list-card">
+                <div class="section-heading">
+                    <div>
+                        <h2>Your Hackathons</h2>
+                        <p id="hackathon-count">2 hackathons</p>
+                    </div>
+                </div>
+
+                <div class="participant-table-wrap">
+                    <table class="participant-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th><span class="sr-only">Actions</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="hackathon-list"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <form class="participant-card participant-form" id="add-hackathon">
+                <div class="section-heading">
+                    <div>
+                        <h2>Add Hackathon</h2>
+                        <p>Create a new event for your workspace.</p>
+                    </div>
+                </div>
+
+                <label for="hackathon-name">Name</label>
+                <input id="hackathon-name" name="name" type="text" required>
+
+                <label for="hackathon-description">Description</label>
+                <input id="hackathon-description" name="description" type="text" required>
+
+                <label for="hackathon-status">Status</label>
+                <select id="hackathon-status" name="status">
+                    <option>Upcoming</option>
+                    <option>Ongoing</option>
+                </select>
+
+                <button class="dashboard-action" type="submit">Add Hackathon</button>
+                <p class="form-message" id="hackathon-message" role="status"></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

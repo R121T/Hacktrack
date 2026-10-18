@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements | HackTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+    <aside class="sidebar">
+        <a href="index.html" class="logo"><span>Hack<span>Track</span></span></a>
+        <p class="sidebar-label">WORKSPACE</p>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="hackathons.html">Hackathons</a>
+            <a href="participants.html">Participants</a>
+            <a href="teams.html">Teams</a>
+            <a href="submissions.html">Submissions</a>
+            <a href="announcements.html" class="active">Announcements</a>
+        </nav>
+        <div class="sidebar-bottom"><a href="index.html">Back to Website</a></div>
+    </aside>
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div>
+                <p class="dashboard-eyebrow">ORGANIZER WORKSPACE</p>
+                <h1>Announcements</h1>
+                <p class="dashboard-subtitle">Keep participants informed with timely event updates.</p>
+            </div>
+            <a href="#add-announcement" class="dashboard-action">+ New Announcement</a>
+        </header>
+        <section class="participant-toolbar">
+            <label class="search-field">
+                <span class="sr-only">Search announcements</span>
+                <input id="announcement-search" type="search" placeholder="Search announcements or hackathons">
+            </label>
+        </section>
+        <section class="participant-layout">
+            <div class="participant-card participant-list-card">
+                <div class="section-heading">
+                    <div>
+                        <h2>All Announcements</h2>
+                        <p id="announcement-count">2 announcements</p>
+                    </div>
+                </div>
+                <div class="participant-table-wrap">
+                    <table class="participant-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Message</th>
+                                <th>Hackathon</th>
+                                <th>Status</th>
+                                <th><span class="sr-only">Actions</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="announcement-list"></tbody>
+                    </table>
+                </div>
+            </div>
+            <form class="participant-card participant-form" id="add-announcement">
+                <div class="section-heading">
+                    <div>
+                        <h2>Create Announcement</h2>
+                        <p>Share an update with participants.</p>
+                    </div>
+                </div>
+                <label for="announcement-title">Title</label>
+                <input id="announcement-title" name="title" type="text" required>
+                <label for="announcement-message-field">Message</label>
+                <textarea id="announcement-message-field" name="message" rows="5" required></textarea>
+                <label for="announcement-hackathon">Target hackathon</label>
+                <select id="announcement-hackathon" name="hackathonId" required></select>
+                <label for="announcement-status">Publication status</label>
+                <select id="announcement-status" name="status">
+                    <option>Draft</option>
+                    <option>Published</option>
+                </select>
+                <button class="dashboard-action" type="submit">Save Announcement</button>
+                <p class="form-message" id="announcement-message" role="status"></p>
+            </form>
+        </section>
+    </main>
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

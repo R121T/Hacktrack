@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Organizer Login | HackTrack</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <span>Hack<span>Track</span></span>
+        </a>
+
+        <a href="index.html" class="back-link">Back to Home</a>
+    </header>
+
+    <main class="login-page">
+
+        <section class="login-card">
+
+            <p class="login-label">ORGANIZER PORTAL</p>
+
+            <h1>Welcome back</h1>
+
+            <p class="login-description">
+                Sign in to manage your hackathons, participants and submissions.
+            </p>
+
+            <form id="organizer-login-form">
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" placeholder="organizer@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="login-submit">
+                    Sign In
+                </button>
+
+            </form>
+
+            <p class="form-message" id="login-message" role="status"></p>
+            <p class="login-note">
+                Organizer access only. Sign-in will be connected to the backend.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script>
+        document.querySelector('#organizer-login-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            document.querySelector('#login-message').textContent =
+                'Sign-in is ready for backend integration.';
+            window.setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 400);
+        });
+    </script>
+
+</body>
+
+</html>

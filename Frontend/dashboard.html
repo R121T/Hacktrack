@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizer Dashboard | HackTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <aside class="sidebar">
+
+        <a href="index.html" class="logo">
+            <span>Hack<span>Track</span></span>
+        </a>
+
+        <p class="sidebar-label">WORKSPACE</p>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="hackathons.html">Hackathons</a>
+            <a href="participants.html">Participants</a>
+            <a href="teams.html">Teams</a>
+            <a href="submissions.html">Submissions</a>
+            <a href="announcements.html">Announcements</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html">Back to Website</a>
+        </div>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div>
+                <p class="dashboard-eyebrow">ORGANIZER WORKSPACE</p>
+                <h1>Dashboard</h1>
+                <p class="dashboard-subtitle">
+                    Here's an overview of your hackathon activities.
+                </p>
+            </div>
+
+            <div class="dashboard-header-actions">
+                <a href="hackathons.html#add-hackathon" class="dashboard-action">+ Create Hackathon</a>
+                <button type="button" id="reset-demo-btn" class="cancel-edit-btn">Reset Demo Data</button>
+            </div>
+        </header>
+
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <p>Total Hackathons</p>
+                <h2 id="dashboard-hackathon-count">0</h2>
+                <span>Hackathons managed</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Participants</p>
+                <h2 id="dashboard-participant-count">0</h2>
+                <span>Across all hackathons</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Teams</p>
+                <h2 id="dashboard-team-count">0</h2>
+                <span>Registered teams</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Submissions</p>
+                <h2 id="dashboard-submission-count">0</h2>
+                <span>Projects submitted</span>
+            </article>
+
+        </section>
+
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Your Hackathons</h2>
+                    <p>Monitor your ongoing events.</p>
+                </div>
+
+                <a href="hackathons.html">View all</a>
+            </div>
+
+
+            <div id="dashboard-hackathon-list"></div>
+
+        </section>
+
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Recent Activity</h2>
+                    <p>Latest updates from your workspace.</p>
+                </div>
+            </div>
+
+            <div class="activity-card" id="dashboard-activity-list"></div>
+
+        </section>
+
+    </main>
+
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submissions | HackTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+    <aside class="sidebar">
+        <a href="index.html" class="logo"><span>Hack<span>Track</span></span></a>
+        <p class="sidebar-label">WORKSPACE</p>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="hackathons.html">Hackathons</a>
+            <a href="participants.html">Participants</a>
+            <a href="teams.html">Teams</a>
+            <a href="submissions.html" class="active">Submissions</a>
+            <a href="announcements.html">Announcements</a>
+        </nav>
+        <div class="sidebar-bottom"><a href="index.html">Back to Website</a></div>
+    </aside>
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div>
+                <p class="dashboard-eyebrow">ORGANIZER WORKSPACE</p>
+                <h1>Submissions</h1>
+                <p class="dashboard-subtitle">Track project links, delivery times and review status.</p>
+            </div>
+            <a href="#add-submission" class="dashboard-action">+ Add Submission</a>
+        </header>
+        <section class="participant-toolbar">
+            <label class="search-field">
+                <span class="sr-only">Search submissions</span>
+                <input id="submission-search" type="search" placeholder="Search projects, teams or status">
+            </label>
+        </section>
+        <section class="participant-layout workspace-wide-layout">
+            <div class="participant-card participant-list-card">
+                <div class="section-heading">
+                    <div>
+                        <h2>Project Submissions</h2>
+                        <p id="submission-count">2 submissions</p>
+                    </div>
+                </div>
+                <div class="participant-table-wrap">
+                    <table class="participant-table">
+                        <thead>
+                            <tr>
+                                <th>Project</th>
+                                <th>Team</th>
+                                <th>Repository</th>
+                                <th>Demo</th>
+                                <th>Submitted</th>
+                                <th>Status</th>
+                                <th><span class="sr-only">Actions</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="submission-list"></tbody>
+                    </table>
+                </div>
+            </div>
+            <form class="participant-card participant-form" id="add-submission">
+                <div class="section-heading">
+                    <div>
+                        <h2>Add Submission</h2>
+                        <p>Record a project submission.</p>
+                    </div>
+                </div>
+                <label for="submission-project">Project name</label>
+                <input id="submission-project" name="project" type="text" required>
+                <label for="submission-team">Team</label>
+                <select id="submission-team" name="teamId" required></select>
+                <label for="submission-repository">Repository link</label>
+                <input id="submission-repository" name="repository" type="url" placeholder="https://github.com/..."
+                    required>
+                <label for="submission-demo">Demo link</label>
+                <input id="submission-demo" name="demo" type="url" placeholder="https://..." required>
+                <label for="submission-submitted">Submission time</label>
+                <input id="submission-submitted" name="submitted" type="datetime-local" required>
+                <label for="submission-status">Status</label>
+                <select id="submission-status" name="status">
+                    <option>Under review</option>
+                    <option>Accepted</option>
+                    <option>Needs changes</option>
+                </select>
+                <button class="dashboard-action" type="submit">Add Submission</button>
+                <p class="form-message" id="submission-message" role="status"></p>
+            </form>
+        </section>
+    </main>
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

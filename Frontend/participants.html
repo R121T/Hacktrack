@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participants | HackTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+    <aside class="sidebar">
+        <a href="index.html" class="logo">
+            <span>Hack<span>Track</span></span>
+        </a>
+
+        <p class="sidebar-label">WORKSPACE</p>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="hackathons.html">Hackathons</a>
+            <a href="participants.html" class="active">Participants</a>
+            <a href="teams.html">Teams</a>
+            <a href="submissions.html">Submissions</a>
+            <a href="announcements.html">Announcements</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html">Back to Website</a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div>
+                <p class="dashboard-eyebrow">ORGANIZER WORKSPACE</p>
+                <h1>Participants</h1>
+                <p class="dashboard-subtitle">Manage everyone registered for your hackathons.</p>
+            </div>
+            <a href="#add-participant" class="dashboard-action">+ Add Participant</a>
+        </header>
+
+        <section class="participant-toolbar">
+            <label class="search-field">
+                <span class="sr-only">Search participants</span>
+                <input id="participant-search" type="search" placeholder="Search by name, email or college">
+            </label>
+        </section>
+
+        <section class="participant-layout">
+            <div class="participant-card participant-list-card">
+                <div class="section-heading">
+                    <div>
+                        <h2>Registered Participants</h2>
+                        <p id="participant-count">2 participants</p>
+                    </div>
+                </div>
+
+                <div class="participant-table-wrap">
+                    <table class="participant-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>College</th>
+                                <th>Hackathon</th>
+                                <th>Status</th>
+                                <th><span class="sr-only">Actions</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="participant-list">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <form class="participant-card participant-form" id="add-participant">
+                <div class="section-heading">
+                    <div>
+                        <h2>Add Participant</h2>
+                        <p>Register a participant for your workspace.</p>
+                    </div>
+                </div>
+
+                <label for="participant-name">Full name</label>
+                <input id="participant-name" name="name" type="text" required>
+
+                <label for="participant-email">Email address</label>
+                <input id="participant-email" name="email" type="email" required>
+
+                <label for="participant-college">College</label>
+                <input id="participant-college" name="college" type="text" required>
+
+                <label for="participant-hackathon">Hackathon (optional)</label>
+                <select id="participant-hackathon" name="hackathonId"></select>
+
+                <button class="dashboard-action" type="submit">Add Participant</button>
+                <p class="form-message" id="participant-message" role="status"></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
