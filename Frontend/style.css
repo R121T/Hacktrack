@@ -556,18 +556,6 @@ html {
     transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
-.stat-card::after {
-    content: '';
-    position: absolute;
-    width: 90px;
-    height: 90px;
-    right: -35px;
-    bottom: -45px;
-    border-radius: 50%;
-    background: rgba(34, 211, 238, 0.12);
-    filter: blur(12px);
-}
-
 .stat-card:hover,
 .hackathon-card:hover {
     transform: translateY(-4px);
